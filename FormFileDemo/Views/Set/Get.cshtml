@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Get";
+}
+
+<h2>Get</h2>
+
+<h1>@ViewBag.FileKey</h1>
+<h1>@ViewBag.FileValue</h1>
+<h1>@TempData["Value"]</h1>
+
+<form asp-controller="Set" asp-action="Get" method="get">
+    <label for="key">Key:</label>
+    <input type="text" name="Key" value="" />
+    <button type="submit">Submit</button>
+</form>

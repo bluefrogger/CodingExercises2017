@@ -1,0 +1,22 @@
+﻿@model Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+<p>@Model.MovieName | @Model.Genre</p>
+
+<p>@DateTime.Now.ToShortDateString()</p>
+<p>@DateTime.Now.ToShortTimeString()</p>
+<p>@DateTime.Now.ToLongDateString()</p>
+
+<repeat count="4">
+    <p>@DateTime.Now.ToLocalTime()</p>
+</repeat>
+<environment name="Production">
+    <p>@DateTime.Now.ToUniversalTime()</p>
+</environment>
+<cache expires-after="@TimeSpan.FromSeconds(10)">
+    @DateTime.Now.ToLongTimeString()
+</cache>
